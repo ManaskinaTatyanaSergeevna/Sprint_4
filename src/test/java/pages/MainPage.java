@@ -1,4 +1,4 @@
-package pom;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -32,17 +32,15 @@ public class MainPage {
     }
 
     //Прокрутка до нижней кнопки заказа и клик на нее
-    public void clickOnUnderOrderButton(){
-        WebElement element = driver.findElement(underOrderButton);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+    public void clickOnOrderButton(String orderButton) {
+        if (orderButton.equals("Нижняя кнопка")) {
+            WebElement element = driver.findElement(underOrderButton);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
 
-        element.click();
-    }
-
-
-    //Клик по верхней кнопке заказа
-    public void clickOnUpperOrderButton(){
-        driver.findElement(upperOrderButton).click();
+            element.click();
+        } else {
+            driver.findElement(upperOrderButton).click();
+        }
     }
 
 }
