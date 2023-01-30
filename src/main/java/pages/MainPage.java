@@ -8,8 +8,10 @@ import org.openqa.selenium.WebElement;
 public class MainPage {
 
     private WebDriver driver;
+
     //верхняя кнопка "Заказать"
     private By upperOrderButton = By.className("Button_Button__ra12g");
+
     //нижняя кнопка "Заказать"
     private By underOrderButton = By.xpath(".//div[@class='Home_FinishButton__1_cWm']/button[text()='Заказать']");
 

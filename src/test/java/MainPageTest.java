@@ -53,10 +53,10 @@ public class MainPageTest {
     }
     @Test
     public void textAndArrowMatchForFirefoxTest(){
-//        System.setProperty(
-//                "webdriver.gecko.driver",
-//                "C:\\WebDriver\\bin\\geckodriver-v0.32.0-win32\\geckodriver.exe"
-//        );
+        System.setProperty(
+                "webdriver.gecko.driver",
+                "C:\\WebDriver\\bin\\geckodriver-v0.32.0-win32\\geckodriver.exe"
+        );
         driver = new FirefoxDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
         MainPage objMainPage = new MainPage(driver);
@@ -67,10 +67,10 @@ public class MainPageTest {
 
     @Test
     public void textAndArrowMatchForChromeTest(){
-//        System.setProperty(
-//                "webdriver.chrome.driver",
-//                "C:\\WebDriver\\bin\\chromedriver_win32\\chromedriver.exe"
-//        );
+        System.setProperty(
+                "webdriver.chrome.driver",
+                "C:\\WebDriver\\bin\\chromedriver_win32\\chromedriver.exe"
+        );
         driver = new ChromeDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
         MainPage objMainPage = new MainPage(driver);

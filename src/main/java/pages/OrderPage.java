@@ -47,7 +47,7 @@ public class OrderPage {
     private By yes = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Да']");
 
     //поле заголовка успешного оформления заказа
-    private By titleOfSuccessfulOrder = By.xpath(".//div[@class='Order_Modal__YZ-d3']/div[text()='Заказ оформлен']");
+    private By titleOfSuccessfulOrder = By.xpath(".//div[text()='Заказ оформлен']");
 
     public OrderPage(WebDriver driver){
         this.driver = driver;
@@ -57,27 +57,33 @@ public class OrderPage {
     public void setUserName(String userName){
         driver.findElement(name).sendKeys(userName);
     }
+
     //Ввод фамилии
     public void setUserSurname(String userSurname){
         driver.findElement(surname).sendKeys(userSurname);
     }
+
     //Ввод адреса
     public void setUserAddress(String userAddress){
         driver.findElement(address).sendKeys(userAddress);
     }
+
     //Выбор первой станции метро
     public void setUserUnderground(){
         driver.findElement(underground).click();
         driver.findElement(By.className("select-search__select")).findElement(By.xpath("./ul/li[1]")).click();
     }
+
     //Ввод номера телефона
     public void setUserPhoneNumber(String userPhoneNumber){
         driver.findElement(phoneNumber).sendKeys(userPhoneNumber);
     }
+
     //Нажимаем кнопку "Далее"
     public void clickOnward(){
         driver.findElement(onward).click();
     }
+
     //Ввод всех данных о пользователе
     public void enteringPersonalUserData(String userName, String userSurname,
                                          String userAddress, String userPhoneNumber) {
@@ -88,16 +94,19 @@ public class OrderPage {
         setUserPhoneNumber(userPhoneNumber);
         clickOnward();
     }
+
     //Ввод даты аренды
     public void setDateRental(String dateRental){
         driver.findElement(date).sendKeys(dateRental);
         driver.findElement(date).sendKeys(Keys.ENTER);
     }
+
     //Выбор суточной аренды
     public void setRentalPeriod(){
         driver.findElement(rentalPeriod).click();
         driver.findElement(rentOneDay).click();
     }
+
     //Выбор цвета самоката
     public void colorSelection(String scooterColor){
         if(scooterColor.equals("Черный")){
@@ -107,14 +116,17 @@ public class OrderPage {
         }
 
     }
+
     //Пишем комментарий для курьера
     public void setUserComment(String userComment){
         driver.findElement(comment).sendKeys(userComment);
     }
+
     //Нажимаем "Заказать"
     public void clickOrder(){
         driver.findElement(order).click();
     }
+
     //Заполнение формы аренды самоката
     public void enterFieldsForRent(String dateRental,String scooterColor, String userComment){
         setDateRental(dateRental);
@@ -123,10 +135,12 @@ public class OrderPage {
         setUserComment(userComment);
         clickOrder();
     }
+
     //Нажимаем "Да"
     public void clickYes(){
         driver.findElement(yes).click();
     }
+
     //Получаем количество заголовков "Заказ оформлен"
     public int getCountTitleOfSuccessfulOrder(){
         return driver.findElements(titleOfSuccessfulOrder).size();
